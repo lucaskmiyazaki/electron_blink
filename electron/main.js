@@ -1,6 +1,19 @@
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');   
 const path = require('path');
+const express = require('express');
+const route = express();
+const port = 3100;
+
+
+route.listen(port, () => {
+    console.log(`Electron app listening at http://localhost:${port}`)
+});
+
+route.post('/cmd', (req, res) => {
+    console.log("aqui");
+    res.end();
+});
  
 let mainWindow;
  
