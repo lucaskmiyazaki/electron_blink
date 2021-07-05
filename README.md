@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Create Ionic and electron app
+
+npm install -g create-react-app
+create-react-app app
+cd app
+
+ionic init
+ionic integrations enable capacitor
+npm install @capacitor-community/electron --save (versao 5.0.0)
+
+check if webdir in capacitor capacitor-config is build
+
+ionic build
+
+npx cap add electron
+npx cap copy
+npx cap open electron (electron filename)
+
+npm install electron-packager --save-dev
+electron-packager . --overwrite --platform=linux --arch=x64 --prune=false --out=releases --electron-version=5.0.1 --asar 
+
+no package.json
+
+"main": "./electron/build/src/index.js",
+"homepage": "./"

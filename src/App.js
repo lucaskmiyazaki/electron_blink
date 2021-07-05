@@ -5,9 +5,16 @@ import { Component } from 'react';
 
 class App extends Component{
 
-  handleClick(){
+  handleClickOn(){
     console.log("ads");
-    fetch('http://localhost:3100/cmd', {
+    fetch('http://localhost:3100/on', {
+      method: 'POST'
+    });
+  }
+
+  handleClickOff(){
+    console.log("ads");
+    fetch('http://localhost:3100/off', {
       method: 'POST'
     });
   }
@@ -15,7 +22,8 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <Button onClick={() => this.handleClick()} variant="primary">blink</Button>
+        <Button onClick={() => this.handleClickOn()} variant="primary">On</Button>
+        <Button onClick={() => this.handleClickOff()} variant="primary">Off</Button>
         Hello World
       </div>
     );  
